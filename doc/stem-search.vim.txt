@@ -1,0 +1,40 @@
+" -----------------------------------------------------------------------------
+" StmSrch is a reverse-stem searching script. It implements the Porter stemming
+" algorithm, by Martin Porter, details of which can be found at:
+"   http://tartarus.org/~martin/PorterStemmer/
+" It also uses tables for irregular verbs and noun pluralizations. 
+" 
+" StmSrch command syntax:
+"   :StmSrch (<word>)*
+"   :ClrStmSrch
+"
+" Each word input to the :StmSrch command will be stemmed and then formulated
+" in such a way as to match possible conjugations or pluralizations. Without 
+" any word given for input, it will attempt to stem the current word under the
+" cursor via expand('<cword>').
+"
+" For example:
+"   :StmSrch search
+" will match any of:
+"   search, searching, searches, searchers, searched, ...
+" and a string of words will work as well, matching in order:
+"   :StmSrch thieves are running from bunnies
+" will match strings of words like: 
+"   thief was ran from bunny
+"   thieves be run from bunnies
+"
+" Use :ClrStmSrch to clear the highlighting for the StmSrch group.
+"
+" Change the highlight color for StmSrch in the s:StmSrchInit() function
+"
+" To rebuild the irregular verb or plural noun tables, run:
+"   ./scripts/buildIrrDicts.pl [v|n] <irregularWordFile>
+" where <irregularWordFile> is a file of word forms, one synset per line and
+" the [v|n] option specifies the filename ending to keep output organized
+" This script outputs two files, keys.[v|n] and dict.[v|n], which are then
+" used to build the dictionaries in the script such as irrNNSKeyDict/irrNNSDict.
+" There are two files of these words in the data directory
+"
+" This was originally written for my own usage, so it may be missing certain
+" features that could easily be added in (e.g. multiple-buffer operations).
+" -----------------------------------------------------------------------------
