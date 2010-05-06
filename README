@@ -1,3 +1,23 @@
+StmSrch is a reverse-stem searching script. It implements the Porter stemming algorithm, by Martin Porter. It also handles irregular verbs and noun pluralizations.
+
+This script can be useful for searching or scanning through corpus files.
+
+Each word input to the :StmSrch command will be stemmed and then formulated in such a way as to match possible conjugations or pluralizations. Without
+any word given for input, it will attempt to stem the current word under the cursor.
+
+For example: 
+- :StmSrch search 
+will match any of: 
+- search, searching, searches, searchers, searched, ...
+and a string of words will work as well, matching in order: 
+- :StmSrch thieves are running from bunnies 
+will match strings of words like: 
+- thief was ran from bunny 
+- thieves be run from bunnies
+
+----
 To use this vim script, add it to ~/.vim/plugin/
 
 See doc/stem-search.vim.txt for more information about the script.
+
+----
