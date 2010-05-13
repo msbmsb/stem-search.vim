@@ -3,7 +3,7 @@ StmSrch is a reverse-stem searching script. It implements the Porter stemming al
 This script can be useful for searching or scanning through corpus files.
 
 Each word input to the :StmSrch command will be stemmed and then formulated in such a way as to match possible conjugations or pluralizations. Without
-any word given for input, it will attempt to stem the current word under the cursor.
+any word given for input, it will attempt to stem the current word under the cursor. 
 
 For example: 
 - :StmSrch search 
@@ -15,9 +15,23 @@ will match strings of words like:
 - thief was ran from bunny 
 - thieves be run from bunnies
 
+Search hits are highlighted, and the highlight color can be modified by
+editing the color in the s:StmSrchInit() function. The matches will stay 
+highlighted even if you search again using the normal '/' key. This is
+useful for cases where you are browsing through a large corpus file, for 
+example and want to see the relative location of matches. 
+
+Use :ClrStmSrch to clear the highlighting for the StmSrch group.
+
+For stemmed words, the search is greedy and may over match. This was useful 
+for my purposes. If more exact word endings are required, this can be added.
+
 ----
 To use this vim script, add it to ~/.vim/plugin/
 
 See doc/stem-search.vim.txt for more information about the script.
 
 ----
+
+Mitchell Bowden
+mitchellbowden -at- gmail -.com-
