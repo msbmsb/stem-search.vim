@@ -19,7 +19,8 @@
 " Each word input to the :StmSrch command will be stemmed and then formulated
 " in such a way as to match possible conjugations or pluralizations. Without 
 " any word given for input, it will attempt to stem the current word under the
-" cursor via expand('<cword>').
+" cursor via expand('<cword>'). The matching is done using word boundaries 
+" \<...\> so not just any substring will match.
 "
 " For example:
 "   :StmSrch search
