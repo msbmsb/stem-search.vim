@@ -2,7 +2,7 @@
 " Description:  StmSrch is a reverse-stem searching script.
 " Author:       Mitchell Bowden <mitchellbowden AT gmail DOT com>
 " Version:      0.1
-" License:      Vim License
+" License:      MIT License: http://creativecommons.org/licenses/MIT/
 " Last Changed: 1 May 2010
 " URL:          http://github.com/msbmsb/stem-search.vim/
 
